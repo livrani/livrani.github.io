@@ -1,4 +1,4 @@
-# [Livrani](https://sebomelivro.com/livrani)
+# [Livrani](https://livrani.github.io)
 
 Pesquise preços de livros em sites selecionados
 
