@@ -7,14 +7,32 @@
 <link rel="icon" type="image/png" href="logo.png" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-  @media (prefers-color-scheme: light) { body { background-color: white; color: black; } a { color: black; }}
-  @media (prefers-color-scheme: dark) { body { background-color: black; color: white; } a { color: white; }}
-  h1 { text-align: center; font-size: 30px; font-family: serif; margin-top: 0px; margin-bottom: -10px; }
-  p { text-align: center; font-size: 14px; font-family: sans-serif; }
-  select { text-align: center; font-size: 16px; height: 30px; width: 180px; border: 1px solid grey; border-radius: 2px; }
-  input { text-align: center; margin: 10px; height: 40px; padding: 10px; font-size: 17px; border: 1px solid grey; width: 325px; border-radius: 10px; }
-  button {text-align: center; margin-left: 4px; margin-right: 4px; font-size: 16px; height: 30px; width: 100px; border: 1px solid grey; border-radius: 7px; }
-  .center { width: 350px; height: 250px; position: absolute; top: -180px; bottom: 0; left: 0; right: 0; margin: auto; text-align: center; }
+  html, body { margin: 0; padding: 0; }
+  body { background-color: white; color: black; }
+  a { color: inherit; }
+  @media (prefers-color-scheme: dark) {
+    body { background-color: black; color: white; }
+  }
+  h1 { text-align: center; font-size: 30px; font-family: serif; margin: 0; padding-top: 20px; }
+  p { text-align: center; font-size: 14px; font-family: sans-serif; margin: 0; padding-bottom: 20px; }
+  .center {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  select, input, button {
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid grey;
+    border-radius: 7px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  button {
+    margin-top: 0;
+  }
   *:focus { outline: none; }
 </style>
 </head>
@@ -32,16 +50,17 @@
   <option value="https://www.enjoei.com.br/s?ref=products_search&d=etc-tal&sr=near_regions&o=low_price&q=">Enjoei</option>
   <option value="https://www.google.com/search?hl=pt-BR&tbm=shop&q=">Google Shopping</option>
 </select>
-<br><input type="search" name="searchterms" placeholder="Digite um título ou autor..." autofocus>
-<br><button type="submit">Buscar</button><button type="reset">Limpar</button> 
+<input type="search" name="searchterms" placeholder="Digite um título ou autor..." autofocus>
+<button type="submit">Buscar</button><button type="reset">Limpar</button>
 </form>
-<p>Código aberto via <a href="https://github.com/livrani/livrani.github.io" target="_blank">GitHub</a></p></div>
+<p>Código aberto via <a href="https://github.com/livrani/livrani.github.io" target="_blank">GitHub</a></p>
+</div>
 <script type="text/javascript">
 function dosearch() {
-var sf=document.searchform;
-var submitto = sf.sengines.options[sf.sengines.selectedIndex].value + (sf.searchterms.value);
-window.open(submitto);
-return false;
+  var sf = document.searchform;
+  var submitto = sf.sengines.options[sf.sengines.selectedIndex].value + sf.searchterms.value;
+  window.open(submitto);
+  return false;
 }
 </script>
 </body>
