@@ -88,7 +88,7 @@
 <div class="container">
   <p>Encontre os melhores preços de livros em sites selecionados.</p>
   <form class="search-form" name="searchform" onSubmit="return dosearch();">
-    <select name="sengines">
+    <select name="sites">
       <option value="https://www.estantevirtual.com.br/busca?b_order=preco&offset=1&q=">Estante Virtual</option>
       <option value="https://www.amazon.com.br/s?i=stripbooks&__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&ref=nb_sb_noss&k=">Amazon Brasil</option>
       <option value="https://livros.mercadolivre.com.br/">Mercado Livre</option>
@@ -106,7 +106,7 @@
 <script type="text/javascript">
   function dosearch() {
     var sf = document.searchform;
-    var submitto = sf.sengines.options[sf.sengines.selectedIndex].value + sf.searchterms.value;
+    var submitto = sf.sites.options[sf.sites.selectedIndex].value + sf.searchterms.value;
     window.open(submitto);
     return false;
   }
